@@ -43,22 +43,641 @@ Credits:
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1. BASE
-	# Mixins
-	# Variables
-	# Global
-2. COMPONENTS
-	# Typography
-	# Images
-	# Navigation
-	# Buttons
-	# Carousel
-	# Forms
-	# Accordian
-	# Posts
-3. LAYOUTS
-	# Header
-	# Main
-	# Sidebar
-	# Featured
-	# Footer
+1. General
+2. Header
+3. Featured Area
+4. Main Content
+5. Footer
+6. Modal Window
+7. Wordpress Specific Styles
+----------------------------------------------------------------
+/*--------------------------------------------------------------
+1.0 - General
+--------------------------------------------------------------*/
+body {
+  padding-top: 60px;
+  padding-bottom: 0;
+  /*60px*/
+}
+@media (max-width: 767px) {
+  body {
+    padding-top: 48px;
+    padding-bottom: 0;
+    background-color: #ffffff;
+  }
+}
+.container {
+  padding-left: 60px;
+  padding-right: 60px;
+  /*60px*/
+}
+@media (max-width: 991px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    /*16px*/
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    /*0px*/
+  }
+}
+.hiddenHeader {
+  display: none !important;
+}
+hr {
+  clear: both;
+  border: 1px solid #eeeeee;
+}
+@media (max-width: 991px) {
+  p,
+  .highlight {
+    font-size: 12px;
+  }
+}
+@media (max-width: 991px) {
+  h5 {
+    font-size: 12px;
+  }
+}
+@media (max-width: 991px) {
+  h4 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 991px) {
+  h3 {
+    font-size: 18px;
+  }
+}
+/*--------------------------------------------------------------
+2.0 - Header
+--------------------------------------------------------------*/
+span.labName_part1 {
+  color: #333333;
+  font-family: 'Lato', san-serif;
+  font-size: 24px;
+  position: absolute;
+  top: 12px;
+  left: 58px;
+}
+@media (max-width: 991px) {
+  span.labName_part1 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 991px) {
+  span.labName_part1 {
+    top: 7px;
+  }
+}
+span.labName_part2 {
+  color: #ffffff;
+  font-family: 'Lato', san-serif;
+  font-size: 24px;
+  position: absolute;
+  top: 12px;
+  left: 130px;
+}
+@media (max-width: 991px) {
+  span.labName_part2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 991px) {
+  span.labName_part2 {
+    top: 7px;
+    left: 118px;
+  }
+}
+span.tagline {
+  color: #246124;
+  font-family: 'Varela Round', san-serif;
+  font-size: 14px;
+  position: relative;
+  top: -37px;
+  left: 65px;
+}
+@media (max-width: 991px) {
+  span.tagline {
+    font-size: 12px;
+  }
+}
+.navbar-brand {
+  position: relative;
+  padding-top: 10px;
+  /*10px*/
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-brand {
+    padding-top: 6px;
+    /*6px*/
+  }
+}
+@media (max-width: 767px) {
+  .navbar-brand {
+    padding-top: 3px;
+    /*3px*/
+  }
+}
+.navbar-nav > li > a {
+  font-family: 'Raleway', san-serif;
+  padding-left: 14px;
+  padding-right: 14px;
+  /*14px*/
+}
+@media (max-width: 991px) {
+  .navbar-nav > li > a {
+    font-size: 12px;
+    /*~12px*/
+    padding-left: 8px;
+    padding-right: 8px;
+    /*8px*/
+  }
+}
+.navbar-nav li.labwiki {
+  border: 1px solid #383838;
+  background: #454545;
+  border-radius: 5px;
+  width: 80px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.navbar-nav li.labwiki > a {
+  padding: 10px;
+}
+.navbar-nav li.labwiki > a:visited,
+.navbar-nav li.labwiki > a:hover,
+.navbar-nav li.labwiki > a:focus,
+.navbar-nav li.labwiki > a:active {
+  background-color: transparent;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  color: #fff;
+}
+.navbar-btn {
+  margin-top: -5px;
+}
+@media (max-width: 991px) {
+  .navbar-btn.btn-sm {
+    margin-top: -6px;
+  }
+}
+.navbar-collapse {
+  padding-left: 30px;
+}
+.navbar-toggle {
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .navbar-brand {
+    margin-left: 3px;
+  }
+}
+/*--------------------------------------------------------------
+3.0 - Featured Area
+--------------------------------------------------------------*/
+#featuredArea {
+  background-color: #eeeeee;
+}
+#featuredLeft {
+  padding: 20px 20px 5px 55px;
+}
+@media (max-width: 991px) {
+  #featuredLeft {
+    padding: 15px 40px 2px;
+  }
+}
+#featuredLeft .nav-tabs {
+  border-bottom: 3px solid #cc5630;
+}
+#featuredLeft .nav-tabs > li > a {
+  line-height: 0.25;
+  border-radius: 8px 8px 0 0;
+  color: #222222;
+  font-family: 'Lato', san-serif;
+  font-size: 16px;
+  background-color: #eeeeee;
+  border: 1px solid #cc5630;
+}
+@media (max-width: 991px) {
+  #featuredLeft .nav-tabs > li > a {
+    font-size: 14px;
+  }
+}
+#featuredLeft .nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+  color: #ffffff;
+  cursor: default;
+  background-color: #cc5630;
+  border: 1px solid #cc5630;
+}
+#featuredLeft .nav-tabs > li.active > a,
+#featuredLeft .nav-tabs > li.active > a:hover,
+#featuredLeft .nav-tabs > li.active > a:focus {
+  color: #ffffff;
+  cursor: default;
+  background-color: #cc5630;
+  border: 1px solid #cc5630;
+}
+#featuredLeft .tab-content {
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  color: #777777;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#featuredLeft .tab-content .tab-pane {
+  margin-top: 0;
+}
+#featuredLeft .tab-content:before,
+#featuredLeft .tab-content:after {
+  content: " ";
+  display: table;
+}
+#featuredLeft .tab-content:after {
+  clear: both;
+}
+#featuredLeft .tab-content img {
+  border: 2px solid #dfdccd;
+  margin-right: 10px;
+  float: left;
+}
+#featuredRight {
+  padding: 10px 50px 10px 30px;
+}
+@media (max-width: 991px) {
+  #featuredRight {
+    padding: 0 40px 10px;
+  }
+}
+#featuredRight h4 {
+  color: #712471;
+}
+#featuredRight .bioLogo {
+  padding-top: 10px;
+}
+@media (min-width: 991px) {
+  #featuredRight .labOpening {
+    padding-top: 45px;
+  }
+}
+#featuredRight .labOpening .pheading {
+  color: #cc5630;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 24px;
+}
+@media (max-width: 991px) {
+  #featuredRight .labOpening .pheading {
+    font-size: 20px;
+  }
+}
+/* image carousel */
+.carousel-control .control-prev,
+.carousel-control .control-next {
+  position: absolute;
+  top: 45%;
+  z-index: 5;
+  display: inline-block;
+  color: #ffffff;
+}
+.carousel-control .control-prev {
+  left: 50%;
+}
+.carousel-control .control-next {
+  right: 50%;
+}
+.carousel-inner h4 {
+  text-transform: uppercase;
+}
+@media (max-width: 991px) {
+  .carousel-inner p {
+    font-size: 12px;
+  }
+}
+/*--------------------------------------------------------------
+4.0 - Main Content
+--------------------------------------------------------------*/
+#mainContent {
+  background-color: #ffffff;
+  padding: 15px 40px 45px;
+}
+@media (max-width: 991px) {
+  #mainContent {
+    padding: 15px 27px 45px;
+  }
+}
+#mainContent #section-1,
+#mainContent #section-2,
+#mainContent #section-3,
+#mainContent #section-4 {
+  color: #cc5630;
+}
+#mainContent h2 {
+  border-bottom: 1px dotted #777777;
+  margin-bottom: 20px;
+  color: #712471;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  /* ~26*/
+  letter-spacing: 2px;
+}
+@media (max-width: 991px) {
+  #mainContent h2 {
+    font-size: 26px;
+  }
+}
+#mainText {
+  padding-right: 40px;
+  /*40px*/
+}
+@media (max-width: 991px) {
+  #mainText {
+    padding-right: 20px;
+    /*20px*/
+  }
+}
+@media (max-width: 991px) {
+  #recentNews {
+    /*.padding-left-right(@padding-xs-horizontal); */
+    padding-right: 5px;
+  }
+}
+blockquote {
+  font-size: 15px;
+  border-left: 5px solid #eeeeee;
+}
+#recentNews h3,
+.news h3 {
+  color: #712471;
+  font-family: 'Lato', san-serif;
+  font-size: 24px;
+}
+@media (max-width: 991px) {
+  #recentNews h3,
+  .news h3 {
+    font-size: 20px;
+  }
+}
+#recentNews h5,
+.news h5 {
+  color: #cc5630;
+  font-family: 'Lato', san-serif;
+  font-size: 16px;
+  /*16px*/
+}
+@media (max-width: 991px) {
+  #recentNews h5,
+  .news h5 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 991px) {
+  #recentNews h5,
+  .news h5 {
+    font-size: 12px;
+  }
+}
+.newsImg {
+  border: 2px solid #dfdccd;
+  margin-right: 10px;
+  float: left;
+}
+.resImg {
+  padding-left: 12px;
+  float: right;
+}
+@media (max-width: 508px) {
+  .resImg {
+    float: left;
+    padding-left: 0;
+    padding-right: 16px;
+  }
+}
+.wp-caption-text {
+  font-style: italic;
+  font-size: 12px;
+  padding: 10px 0px;
+}
+.news .nav-tabs,
+.people .nav-tabs {
+  border-bottom: 3px solid #555555;
+}
+.news .nav-tabs > li > a,
+.people .nav-tabs > li > a {
+  line-height: 0.25;
+  border-radius: 8px 8px 0 0;
+  color: #222222;
+  font-family: 'Lato', san-serif;
+  font-size: 16px;
+  background-color: #eeeeee;
+  border: 1px solid #555555;
+}
+@media (max-width: 991px) {
+  .news .nav-tabs > li > a,
+  .people .nav-tabs > li > a {
+    font-size: 14px;
+  }
+}
+.news .nav-tabs > li > a:hover,
+.people .nav-tabs > li > a:hover {
+  border-color: #eeeeee #eeeeee #dddddd;
+  color: #ffffff;
+  cursor: default;
+  background-color: #555555;
+  border: 1px solid #555555;
+}
+.news .nav-tabs > li.active > a,
+.people .nav-tabs > li.active > a,
+.news .nav-tabs > li.active > a:hover,
+.people .nav-tabs > li.active > a:hover,
+.news .nav-tabs > li.active > a:focus,
+.people .nav-tabs > li.active > a:focus {
+  color: #ffffff;
+  cursor: default;
+  background-color: #555555;
+  border: 1px solid #555555;
+}
+.news .tab-content,
+.people .tab-content {
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.news .tab-content .tab-pane,
+.people .tab-content .tab-pane {
+  margin-top: 8px;
+}
+.resources .panel-group .panel-heading {
+  background-color: #555555;
+  color: #ffffff;
+}
+.resources .panel-group .panel-title a:link,
+.resources .panel-group .panel-title a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+.resources .panel-group .panel-title a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 991px) {
+  .resources .panel-group .panel-title {
+    font-size: 14px;
+  }
+}
+.resources .panel-group .panel-body ul {
+  margin-left: -20px;
+}
+@media (max-width: 991px) {
+  .resources .panel-group .panel-body ul {
+    font-size: 12px;
+  }
+}
+.people .thumbnail {
+  display: inline-block;
+  position: relative;
+  border: none !important;
+  padding: 0 0 95px 0;
+}
+.people .thumbnail h4 {
+  color: #cc5630;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .people .thumbnail h4 {
+    font-size: 14px;
+  }
+}
+.people .thumbnail .title {
+  color: #777777;
+}
+@media (max-width: 767px) {
+  .people .thumbnail .title {
+    font-size: 14px;
+  }
+}
+.people .thumbnail p {
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .people .thumbnail p {
+    font-size: 11px;
+  }
+}
+.people .thumbnail > img {
+  border: 2px solid #dfdccd;
+}
+@media (min-width: 1200px) {
+  .people .thumbnail {
+    margin-left: 12px;
+  }
+}
+.people .thumbnail .caption {
+  position: absolute;
+  width: 100%;
+  padding: 5px 0px !important;
+}
+.people .pInv {
+  padding: 0 0 150px 0;
+}
+/*--------------------------------------------------------------
+5.0 - Footer
+--------------------------------------------------------------*/
+#pageFooter {
+  background: url(../images/footer-1050x105.png) no-repeat left bottom;
+  background-color: #ffffff;
+  padding-top: 55px;
+  padding-bottom: 15px;
+  /*55px and 15px*/
+  padding-left: 25px;
+  padding-right: 25px;
+  /*25px*/
+  color: #ffffff;
+  font-family: 'Open Sans', san-serif;
+  font-size: 13px;
+}
+@media (max-width: 991px) {
+  #pageFooter {
+    padding-left: 15px;
+    padding-right: 15px;
+    /*15px*/
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 991px) {
+  #pageFooter {
+    font-size: 11.9px;
+  }
+}
+#pageFooter a:link,
+#pageFooter a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+#pageFooter a:hover {
+  text-decoration: underline;
+}
+#pageFooter .connect {
+  color: #cc5630;
+}
+#pageFooter .socialIcon {
+  display: inline;
+}
+#pageFooter .socialIcon a:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+@media (max-width: 991px) {
+  #pageFooter .socialIcon {
+    padding-top: 30px;
+    /*30px*/
+  }
+}
+@media (max-width: 991px) {
+  #pageFooter .footer-left {
+    padding-top: 25px;
+    /*25px*/
+  }
+}
+/*--------------------------------------------------------------
+6.0 - Modal window
+--------------------------------------------------------------*/
+.modal-title {
+  color: #cc5630;
+}
+.modal-title .heading {
+  font-size: 18px;
+  font-family: 'Lato', san-serif;
+}
+.embed-responsive-16by9 {
+  margin-bottom: 10px;
+}
+/*--------------------------------------------------------------
+7.0 - Wordpress specific styles
+--------------------------------------------------------------*/
+.admin-bar .navbar-fixed-top {
+  margin-top: 30px;
+}
+.current-menu-item > a,
+.current-menu-parent > a {
+  background-color: #b14b2a;
+}
+.current-menu-item {
+  color: #333;
+}
+#menu-main-menu {
+  margin-bottom: 11px;
+}

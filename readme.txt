@@ -2,7 +2,7 @@ Theme Name: MartinLab
 Theme URI: https://github.com/wenminchen/martinlab.git
 Author: Wenmin Chen
 Author URI: http://wenminchen.com/
-Description: MartinLab is a theme based on the website for Martin Lab at MIT (http://web.mit.edu/martin-lab), designed and developed by [Wenmin Chen](http://www.wenminchen.com). It is built to be part of a personal portfolio and it's not intented to be released for public use.
+Description: MartinLab is a theme based on the website for [Martin Lab at MIT](http://web.mit.edu/martin-lab), designed and developed by [Wenmin Chen](http://www.wenminchen.com). It is built to be part of a personal portfolio and it's not intented to be released for public use.
 Version: 0.0.1
 License: GNU General Public License v3.0 /
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

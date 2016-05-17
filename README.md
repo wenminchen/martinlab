@@ -1,10 +1,10 @@
 # MartinLab
-MartinLab is a theme based on the website for Martin Lab at MIT (http://web.mit.edu/martin-lab), designed and developed by [Wenmin Chen](http://www.wenminchen.com). It is built to be part of a personal portfolio and it's not intented to be released for public use.
+MartinLab is a theme based on the website for [Martin Lab at MIT](http://web.mit.edu/martin-lab), designed and developed by [Wenmin Chen](http://www.wenminchen.com). It is built to be part of a personal portfolio and it's not intented to be released for public use.
 
 ## Features
 
 ### Responsive Design
-MartinLab is built using the bootstrap framework and is therefore responsive. Specifically, the developer utilized the responsive, mobile first design concept.
+MartinLab is built using the bootstrap framework and is therefore responsive. 
 
 ### Customizer Options (to be updated)
 Extended options available from the Customizer:
