@@ -71,25 +71,36 @@ add_action( 'after_setup_theme', 'martinlab_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
+ * The approach used is different from wordpress recommended method
+ * The code was based on Zac Gordon's code (https://wp.zacgordon.com/2013/06/12/create-a-function-to-create-wordpress-widgets/)
  */
-function martinlab_widgets_init() {
+function martinlab_create_widget( $name, $id, $description ) {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'martinlab' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( $name ),
+		'id'            => $id,
+		'description' => __( $description ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 		) );
 }
-add_action( 'widgets_init', 'martinlab_widgets_init' );
+martinlab_create_widget( 'Home Sidebar', 'home-sidebar', 'Display on the side of homepage' );
+martinlab_create_widget( 'Resources Sidebar', 'resources-sidebar', 'Displays on the side of page with sidebar' );
+martinlab_create_widget( 'Featured Right Focus', 'featured-right-focus', 'Displays on the right of featured section' );
+martinlab_create_widget( 'Featured Right Job', 'featured-right-job', 'Displays on the right of featured section' );
+martinlab_create_widget( 'Featured Left Front', 'featured-left-front', 'Displays on the left of featured section' );
+martinlab_create_widget( 'Featured Left Research', 'featured-left-research', 'Displays on the left of featured section' );
+martinlab_create_widget( 'Featured Left People', 'featured-left-people', 'Displays on the left of featured section' );
+martinlab_create_widget( 'Featured Left Publications', 'featured-left-publications', 'Displays on the left of featured section' );
+martinlab_create_widget( 'Featured Left News', 'featured-left-news', 'Displays on the left of featured section' );
 
 /**
  * Enqueue scripts and styles
  */
 function martinlab_scripts() {
 
-	// Import the necessary TK Bootstrap WP CSS additions
+	// Import the necessary Bootstrap WP CSS additions
 	wp_enqueue_style( 'martinlab-bootstrap-wp', get_template_directory_uri() . '/includes/css/bootstrap-wp.css' );
 
 	// load bootstrap css
@@ -97,6 +108,9 @@ function martinlab_scripts() {
 
 	// load Font Awesome css
 	wp_enqueue_style( 'martinlab-font-awesome', get_template_directory_uri() . '/includes/css/font-awesome.min.css', false, '4.1.0' );
+
+	//Add google fonts
+	wp_enqueue_style( 'martinlab-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Lato|Varela+Round|Shadows+Into+Light|Oswald');
 
 	// load martinlab styles
 	wp_enqueue_style( 'martinlab-style', get_stylesheet_uri() );
@@ -116,6 +130,15 @@ function martinlab_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'martinlab-keyboard-image-navigation', get_template_directory_uri() . '/includes/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
+
+	wp_enqueue_script( 'martinlab-scriptsjs', get_template_directory_uri() . '/includes/js/scripts.js', array('jquery', 'martinlab-bootstrapjs'), '', true );
+
+	// load HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+	wp_enqueue_script( 'martinlab-htm5shivjs', 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js');
+	wp_script_add_data( 'martinlab-htm5shivjs', 'conditional', 'lt IE 9' );
+
+	wp_enqueue_script( 'martinlab-respondjs', 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js');
+	wp_script_add_data( 'martinlab-respondjs', 'conditional', 'lt IE 9' );
 
 }
 add_action( 'wp_enqueue_scripts', 'martinlab_scripts' );
