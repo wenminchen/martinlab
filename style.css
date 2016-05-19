@@ -597,7 +597,7 @@ blockquote {
 5.0 - Footer
 --------------------------------------------------------------*/
 #pageFooter {
-  background: url(../images/footer-1050x105.png) no-repeat left bottom;
+  background: url(/includes/img/footer-1050x105.png) no-repeat left bottom;
   background-color: #ffffff;
   padding-top: 55px;
   padding-bottom: 15px;
