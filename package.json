@@ -1,0 +1,20 @@
+{
+  "name": "martinlab",
+  "version": "0.0.1",
+  "description": "MartinLab is a theme based on the website for Martin Lab at MIT, designed and developed by Wenmin Chen",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenminchen/martinlab.git"
+  },
+  "author": "Wenmin Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wenminchen/martinlab/issues"
+  },
+  "homepage": "https://github.com/wenminchen/martinlab#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0"
+  }
+}
