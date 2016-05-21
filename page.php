@@ -7,22 +7,33 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package _tk
+ * @package martinlab
  */
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+<!-- image carousel -->
+    <section id="featuredArea">
+      <h2 class="screen-reader-text">Featured Area</h2>
+      <h3 class="screen-reader-text">Image Carousel</h3>
 
-		<?php get_template_part( 'content', 'page' ); ?>
+      <?php 
+      get_template_part('content', 'carousel'); 
+      get_template_part('content', 'featured'); 
+      ?>
 
-		<?php
-			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || '0' != get_comments_number() )
-				comments_template();
-		?>
+    </section><!-- end featuredArea -->  
 
-	<?php endwhile; // end of the loop. ?>
+<!-- main content -->
+    <section id="mainContent"> 
+    	<h2><?php wp_title(''); ?></h2>
+      
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+   
+      <p><?php the_content(); ?></p>        
 
-<?php get_sidebar(); ?>
+	    <?php endwhile; endif; ?>
+
+	</section>  
+          
 <?php get_footer(); ?>

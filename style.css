@@ -57,7 +57,6 @@ Credits:
 body {
   padding-top: 60px;
   padding-bottom: 0;
-  /*60px*/
 }
 @media (max-width: 767px) {
   body {
@@ -69,25 +68,20 @@ body {
 .container {
   padding-left: 60px;
   padding-right: 60px;
-  /*60px*/
 }
 @media (max-width: 991px) {
   .container {
     padding-left: 16px;
     padding-right: 16px;
-    /*16px*/
   }
 }
 @media (max-width: 767px) {
   .container {
     padding-left: 0;
     padding-right: 0;
-    /*0px*/
   }
 }
-.hiddenHeader {
-  display: none !important;
-}
+
 hr {
   clear: both;
   border: 1px solid #eeeeee;
@@ -169,33 +163,27 @@ span.tagline {
 .navbar-brand {
   position: relative;
   padding-top: 10px;
-  /*10px*/
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar-brand {
     padding-top: 6px;
-    /*6px*/
   }
 }
 @media (max-width: 767px) {
   .navbar-brand {
     padding-top: 3px;
-    /*3px*/
   }
 }
 .navbar-nav > li > a {
   font-family: 'Raleway', san-serif;
   padding-left: 14px;
   padding-right: 14px;
-  /*14px*/
 }
 @media (max-width: 991px) {
   .navbar-nav > li > a {
     font-size: 12px;
-    /*~12px*/
     padding-left: 8px;
     padding-right: 8px;
-    /*8px*/
   }
 }
 .navbar-nav li.labwiki {
@@ -386,7 +374,6 @@ span.tagline {
   color: #712471;
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
-  /* ~26*/
   letter-spacing: 2px;
 }
 @media (max-width: 991px) {
@@ -396,17 +383,14 @@ span.tagline {
 }
 #mainText {
   padding-right: 40px;
-  /*40px*/
 }
 @media (max-width: 991px) {
   #mainText {
     padding-right: 20px;
-    /*20px*/
   }
 }
 @media (max-width: 991px) {
   #recentNews {
-    /*.padding-left-right(@padding-xs-horizontal); */
     padding-right: 5px;
   }
 }
@@ -431,7 +415,6 @@ blockquote {
   color: #cc5630;
   font-family: 'Lato', san-serif;
   font-size: 16px;
-  /*16px*/
 }
 @media (max-width: 991px) {
   #recentNews h5,
@@ -597,14 +580,12 @@ blockquote {
 5.0 - Footer
 --------------------------------------------------------------*/
 #pageFooter {
-  background: url(/includes/img/footer-1050x105.png) no-repeat left bottom;
+  background: url("includes/img/footer-1050x105.png") no-repeat left bottom;
   background-color: #ffffff;
   padding-top: 55px;
   padding-bottom: 15px;
-  /*55px and 15px*/
   padding-left: 25px;
   padding-right: 25px;
-  /*25px*/
   color: #ffffff;
   font-family: 'Open Sans', san-serif;
   font-size: 13px;
@@ -612,8 +593,7 @@ blockquote {
 @media (max-width: 991px) {
   #pageFooter {
     padding-left: 15px;
-    padding-right: 15px;
-    /*15px*/
+    padding-right: 15px; 
     padding-bottom: 0;
   }
 }
@@ -643,13 +623,11 @@ blockquote {
 @media (max-width: 991px) {
   #pageFooter .socialIcon {
     padding-top: 30px;
-    /*30px*/
   }
 }
 @media (max-width: 991px) {
   #pageFooter .footer-left {
     padding-top: 25px;
-    /*25px*/
   }
 }
 /*--------------------------------------------------------------
@@ -681,3 +659,51 @@ blockquote {
 #menu-main-menu {
   margin-bottom: 11px;
 }
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+

@@ -8,7 +8,7 @@
  */
 ?>
   <footer id="pageFooter">
-      <h2 class="hiddenHeader">Footer</h2>
+      <h2 class="screen-reader-text">Footer</h2>
       <div class="row">
         <div class="col-md-1 hidden-xs hidden-sm footer-left">
           <p class="pull-left"><a href="http://web.mit.edu/" target="_blank"><img src="<?php bloginfo('template_directory');?>/includes/img/MIT-logo.gif" alt="MIT logo" /></a></p>

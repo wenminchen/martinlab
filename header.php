@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title><?php wp_title( '|', true, 'right' ); <?php bloginfo( 'name' ); ?></title>
+	<title><?php wp_title( '|', true, 'right' )?><?php bloginfo( 'name' ); ?></title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -24,10 +24,10 @@
 <body <?php body_class(); ?>>
 	<?php do_action( 'before' ); ?>
 
-<h1 class="hiddenHeader"><?php bloginfo( 'name' ); ?></h1>
+<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
     <header id="mainHeader">
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <h2 class="hiddenHeader">main navigation</h2> <!-- hide this heading from view using CSS -->
+        <h2 class="screen-reader-text">main navigation</h2> <!-- hide this heading from view using CSS -->
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -49,7 +49,7 @@
             
             <?php 
               $args = array(
-                'menu' => 'header-menu',
+                'menu' => 'primary',
                 'menu_class' => 'nav navbar-nav navbar-right',
                 'container' => 'false',
                 'walker'    => new wp_bootstrap_navwalker()
