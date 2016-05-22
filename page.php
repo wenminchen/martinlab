@@ -18,8 +18,8 @@ get_header(); ?>
       <h3 class="screen-reader-text">Image Carousel</h3>
 
       <?php 
-      get_template_part('content', 'carousel'); 
-      get_template_part('content', 'featured'); 
+        get_template_part('content', 'carousel'); 
+        get_template_part('content', 'featured'); 
       ?>
 
     </section><!-- end featuredArea -->  

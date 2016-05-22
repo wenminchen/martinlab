@@ -1,19 +1,25 @@
-      <?php $page_name = trim( wp_title('',false) ); ?>
+<?php
+/**
+ * The template used for displaying featured section on all pages
+ *
+ * @package martinlab
+ */
+?>
 
       <!-- featured left and featured right region -->
       <div class="row">
         <div id="featuredLeft" class="col-md-6 col-sm-12">
 
-          <?php if ($page_name == 'Research') : ?>
+          <?php if (is_page( 'Research' ) ) : ?>
           <?php if ( dynamic_sidebar( 'featured-left-research' ) ); ?>
          
-          <?php elseif ($page_name == 'People') : ?>
+          <?php elseif (is_page( 'People' ) ) : ?>
           <?php if ( dynamic_sidebar( 'featured-left-people' ) ); ?>
 
-          <?php elseif ($page_name == 'Publications') : ?>
+          <?php elseif (is_page( 'Publications' ) ) : ?>
           <?php if ( dynamic_sidebar( 'featured-left-publications' ) ); ?>
 
-          <?php elseif ($page_name == 'News and Resources') : ?>
+          <?php elseif (is_page( 'News and Resources' ) ) : ?>
           <?php if ( dynamic_sidebar( 'featured-left-news' ) ); ?>
 
           <?php else : ?>
@@ -22,6 +28,13 @@
          
          </div>
         <div id="featuredRight" class="col-md-6 col-sm-12">
-          <?php if ( dynamic_sidebar( 'featured-right' ) ); ?>
+          
+          <?php if (is_page( 'People' ) ) : ?>
+          <?php if ( dynamic_sidebar( 'featured-right-job' ) ); ?>
+
+          <?php else : ?>
+          <?php if ( dynamic_sidebar( 'featured-left-focus' ) ); ?>
+          <?php endif; ?>
+          
        </div>    
       </div>

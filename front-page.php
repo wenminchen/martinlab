@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template used for displaying front page
+ *
+ * @package martinlab
+ */
+
+get_header(); ?>
 
 <!-- image carousel -->
     <section id="featuredArea">
@@ -6,8 +13,8 @@
       <h3 class="screen-reader-text">Image Carousel</h3>
 
       <?php 
-      get_template_part('content', 'carousel'); 
-      get_template_part('content', 'featured'); 
+        get_template_part('content', 'carousel'); 
+        get_template_part('content', 'featured'); 
       ?>
       
     </section><!-- end featuredArea -->      

@@ -1,6 +1,6 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar for News and Resources page
  *
  * @package martinlab
  */

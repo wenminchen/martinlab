@@ -1,3 +1,11 @@
+<?php
+/**
+ * The template used for displaying modals on all pages
+ *
+ * @package martinlab
+ */
+?>
+
 <!-- modal windows -->
     <!-- image carousel -->
     <div id="warhol" class="modal fade" tabindex="-1">

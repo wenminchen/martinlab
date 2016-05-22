@@ -1,23 +1,30 @@
+<?php
+/**
+ * The template used for displaying carousels on all pages
+ *
+ * @package martinlab
+ */
+?>
+
       <?php 
-            $page_name = trim( wp_title('',false) ); 
 
-            if ($page_name == 'People') :
+        if (is_page( 'People' ) )  :
 
-                $args = array(
-                  'post_type'     => 'carousel',
-                  'category_name' => 'people'
-                );
-                $the_query = new WP_Query( $args );
+            $args = array(
+              'post_type'     => 'carousel',
+              'category_name' => 'people'
+            );
+            $the_query = new WP_Query( $args );
 
-            else :
+        else :
 
-                $args = array(
-                  'post_type'     => 'carousel',
-                  'category_name' => 'home'
-                );
-                $the_query = new WP_Query( $args );
+            $args = array(
+              'post_type'     => 'carousel',
+              'category_name' => 'home'
+            );
+            $the_query = new WP_Query( $args );
 
-            endif; 
+        endif; 
       ?>  
 
       <div id="imgCarousel" class="carousel slide" data-ride="carousel">
@@ -49,7 +56,7 @@
               <img src="<?php echo $thumbnail_url[0]; ?>" alt="<?php echo $thumbnail_meta; ?>">
               <div class="carousel-caption">
                 <h4 class="hidden-xs"><?php the_title(); ?></h4>
-                <?php if ($page_name == 'People'): ?>  
+                <?php if(is_page( 'People' ) ): ?>  
                   <?php 
                   $link_value = get_post_meta($post->ID, 'link', true);
                   // check if the custom field has a value

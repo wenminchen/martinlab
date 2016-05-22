@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Right Sidebar
- * 
+ * The template used for displaying blog listing page (News and Resources page in this case)
+ *
  * @package martinlab
  */
 
@@ -18,20 +18,28 @@ get_header(); ?>
       ?>
 
     </section><!-- end featuredArea -->  
-
+     
 <!-- main content -->
-    <section id="mainContent"> 
+    <section id="mainContent">
       <div class="row" > 
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-9 col-sm-8 news">
+          <h2>Lab News</h2>
 
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
    
-      	  <p><?php the_content(); ?></p>        
+          <article class="post">
+            
+            <h5><a href="<?php the_permalink(); ?>"><?php the_title('',' | '); ?></a><?php echo the_time('F, Y');?></h5>
+
+      	    <p><?php the_content(); ?></p>        
 
 	      <?php endwhile; endif; ?>
-        </div><!-- end news -->
-	
-   <?php get_sidebar( 'resources' ); ?>
-   </section> 
+          
+        </article>
+      </div>  
 
+<?php get_sidebar( 'resources' ); ?>
+
+	</section>
+      
 <?php get_footer(); ?>
