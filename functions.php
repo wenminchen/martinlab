@@ -103,16 +103,13 @@ function martinlab_scripts() {
 	// Import the necessary Bootstrap WP CSS additions
 	wp_enqueue_style( 'martinlab-bootstrap-wp', get_template_directory_uri() . '/includes/css/bootstrap-wp.css' );
 
-	// load bootstrap css
-	wp_enqueue_style( 'martinlab-bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.min.css' );
-
 	// load Font Awesome css
 	wp_enqueue_style( 'martinlab-font-awesome', get_template_directory_uri() . '/includes/css/font-awesome.min.css', false, '4.1.0' );
 
 	//Add google fonts
 	wp_enqueue_style( 'martinlab-google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Lato|Varela+Round|Shadows+Into+Light|Oswald');
 
-	// load martinlab styles
+	// load martinlab styles (includes bootstrap stylesheet generate from less)
 	wp_enqueue_style( 'martinlab-style', get_stylesheet_uri() );
 
 	// load bootstrap js

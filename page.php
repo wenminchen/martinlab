@@ -26,8 +26,13 @@ get_header(); ?>
 
 <!-- main content -->
     <section id="mainContent"> 
-    	<h2><?php wp_title(''); ?></h2>
       
+      <?php 
+        $pagename = explode('|', wp_title( '|', false, 'right' ));
+      ?>
+
+      <h2><?php echo $pagename[0]; ?></h2>
+
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
    
       <p><?php the_content(); ?></p>        

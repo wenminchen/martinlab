@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title><?php wp_title( '|', true, 'right' )?><?php bloginfo( 'name' ); ?></title>
+	<title><?php wp_title( '|', true, 'right' );?></title>
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -43,7 +43,7 @@
             ?>
 
             <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><img src="<?php bloginfo('template_directory');?>/includes/img/logo.png" class="logo">
-              <span class="labName_part1"> <?php echo $pieces[0] ?></span><span class="labName_part2"><?php echo $pieces[1]; ?></span><br /><span class="tagline"><?php bloginfo( 'description' ); ?></span></a>
+              <span class="labName_part1"> <?php echo $pieces[0]; ?></span><span class="labName_part2"><?php echo $pieces[1]; ?></span><br /><span class="tagline"><?php bloginfo( 'description' ); ?></span></a>
           </div><!-- end navbar-header -->
           <div class="navbar-collapse collapse">
             

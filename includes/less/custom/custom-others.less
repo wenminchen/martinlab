@@ -1,0 +1,719 @@
+//
+// this file contains customization not possible with variables
+// --------------------------------------------------
+
+/*--------------------------------------------------------------
+1.0 - Custom mixins
+--------------------------------------------------------------*/
+.a-link (@color){
+  a:link, a:visited {
+  color: @color;
+  text-decoration:none;
+  }
+  a:hover {
+  text-decoration:underline;
+  }
+}
+
+.font-style(@color; @font-family:@font-family-lato; @font-size: @font-size-h3; @font-size-xs: floor((@font-size-h3 * 0.85))){
+  color: @color;
+  font-family: @font-family;
+  font-size: @font-size;
+  @media (max-width: @screen-sm-max) {
+    font-size: @font-size-xs;
+  }
+}
+
+.padding-left-right(@padding){
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+.padding-top-bottom(@padding-top; @padding-bottom){
+  padding-top: @padding-top;
+  padding-bottom: @padding-bottom;
+}
+
+.margin-left-right(@margin){
+  margin-left: @margin;
+  margin-right:@margin
+}
+
+.border(@size; @color){
+  border: @size solid @color;
+}
+
+.img-style{
+  border: 2px solid @custom-border-color;
+  margin-right: @padding-small-horizontal;
+  float: left;
+}
+
+.nav-tabs-style(@color-1, @color-2, @color-3) {
+  border-bottom: 3px solid @color-1; 
+  >li {
+    > a {
+    line-height: 0.25;
+    border-radius: @border-radius-base * 2 @border-radius-base * 2 0 0;
+    .font-style(@gray-darker; @font-family-lato; floor((@font-size-base * 1.15)); @font-size-base);
+    background-color: @color-2;
+    .border(1px; @color-3);
+    }
+    > a:hover {
+    border-color: @gray-lighter @gray-lighter @table-border-color;
+    color: @custom-color-base;
+    cursor: default;
+    background-color: @color-1; 
+    .border(1px; @color-3);
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @custom-color-base;
+        cursor: default;
+        background-color: @color-1; 
+        .border(1px; @color-3); 
+      }
+    }
+  }
+} 
+
+.tab-content-style(@color, @radius, @margin){
+  border-left: 1px solid @table-border-color;
+  border-right: 1px solid @table-border-color;
+  border-bottom: 1px solid @table-border-color;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: @custom-color-base;
+  color: @color;
+  .border-bottom-radius(@radius);
+  .tab-pane{
+    margin-top:@margin;
+  }
+}
+
+/*--------------------------------------------------------------
+2.0 - General
+--------------------------------------------------------------*/
+body {
+  .padding-top-bottom(@padding-base-vertical * 10; 0); /*60px*/
+  @media (max-width: @screen-xs-max) {
+    .padding-top-bottom(@padding-base-vertical * 8; 0);
+    background-color: @custom-color-base; 
+  }
+}
+
+.container {
+	.padding-left-right(@padding-base-horizontal * 5); /*60px*/
+	@media (max-width: @screen-sm-max) {
+    .padding-left-right(@padding-large-horizontal); /*16px*/
+    }
+  @media (max-width: @screen-xs-max) {
+    .padding-left-right(0); /*0px*/  
+    }  
+}
+
+.hiddenHeader{
+  .responsive-invisibility();
+} 
+
+hr{
+  clear: both;
+  .border(1px; @gray-lighter);
+}
+
+p, .highlight {
+  @media (max-width: @screen-sm-max) {
+    font-size: @font-size-small;
+  }
+}
+
+h5 {
+  @media (max-width: @screen-sm-max) {
+      font-size: @font-size-h6;
+    }
+}
+
+h4 {
+  @media (max-width: @screen-sm-max) {
+      font-size: @font-size-h5;
+    }
+}
+
+h3 {
+  @media (max-width: @screen-sm-max) {
+      font-size: @font-size-h4;
+    }
+}
+
+/*--------------------------------------------------------------
+3.0 - Header
+--------------------------------------------------------------*/
+span.labName_part1{
+  .font-style(@gray-dark);
+  position: absolute;
+  top: 12px;
+  left: 58px;
+  @media (max-width: 991px){
+    top: 7px;
+  }
+}
+
+span.labName_part2{
+  .font-style(@custom-color-base);
+  position: absolute;
+  top: 12px;
+  left: 130px;
+  @media (max-width: 991px){
+    top: 7px;
+    left: 118px;
+  }
+}
+
+span.tagline{
+	.font-style(darken(@custom-color-green, 15%); @font-family-varela-round; @font-size-h5; @font-size-h6);
+  position: relative;
+  top: -37px;
+  left: 65px;
+}
+
+.navbar-brand {
+  position: relative;
+  padding-top: @padding-large-vertical; /*10px*/
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+    padding-top: @padding-base-vertical; /*6px*/
+  }
+  @media (max-width: @screen-xs-max){
+    padding-top: @padding-base-vertical / 2; /*3px*/
+  }
+}
+
+.navbar-nav {
+  > li > a {
+    font-family: @font-family-raleway;
+    .padding-left-right(@padding-base-horizontal + 2); /*14px*/
+    @media (max-width: @screen-sm-max) {
+      font-size: @font-size-h6; /*~12px*/
+      .padding-left-right(@padding-base-horizontal - 4); /*8px*/  
+    }
+  }
+  li.labwiki {
+    border: 1px solid #383838;
+    background: #454545;;
+    border-radius: 5px;
+    width: 80px;
+    margin-top: 5px;
+    margin-left: 10px;
+    > a{
+      padding: 10px;
+      &:visited,
+      &:hover, 
+      &:focus,
+      &:active {
+        background-color: transparent;
+        .opacity(.6);
+        color: #fff;
+      }
+    }
+  }
+} 
+
+.navbar-btn{
+  margin-top: -@padding-small-vertical;
+  &.btn-sm{
+    @media (max-width: @screen-sm-max) {
+    margin-top: -@padding-base-vertical;
+    }
+  } 
+}
+
+.navbar-collapse {
+  padding-left:  @grid-gutter-width;
+}
+
+.navbar-toggle {
+  margin-right: 20px;
+}
+
+.navbar-brand {
+  @media (max-width: @screen-xs-max) {
+    margin-left: 3px;
+  }
+}
+
+/*--------------------------------------------------------------
+4.0 - Featured Area
+--------------------------------------------------------------*/
+#featuredArea{
+	background-color: @gray-lighter; 
+}
+
+#featuredLeft{
+	padding: 20px 20px 5px 55px;
+	@media (max-width: @screen-sm-max) {
+		padding: 15px 40px 2px;
+	}
+  .nav-tabs{
+    .nav-tabs-style(@custom-color-orange, @gray-lighter, @custom-color-orange);
+  }
+  .tab-content{
+    .tab-content-style(@gray-light, 0, 0);
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+    img{
+      .img-style;
+    }
+  }
+}  
+
+#featuredRight{
+	padding: 10px 50px 10px 30px;
+	@media (max-width: @screen-sm-max) {
+	 padding: 0 40px 10px;
+	}
+	h4 {
+		color: @custom-color-purple;
+	}
+	.bioLogo {
+		padding-top: @padding-large-vertical;
+	}
+	.labOpening{
+		@media (min-width: @screen-sm-max) {
+			padding-top: @padding-small-vertical * 9;
+		}
+		.pheading{
+      .font-style(@custom-color-orange; @font-family-shadows; @font-size-h3; floor((@font-size-h3 * 0.85)));
+		}
+	}	
+}
+
+/* image carousel */
+.carousel-control .control-prev,
+.carousel-control .control-next {
+  position: absolute;
+  top: 45%;
+  z-index: 5;
+  display: inline-block;
+  color: @custom-color-base;
+}
+
+.carousel-control .control-prev {
+  left: 50%;
+}
+
+.carousel-control .control-next {
+  right: 50%;
+}
+
+.carousel-inner {
+  h4{
+    text-transform: uppercase;
+  }
+  p{
+    @media (max-width: @screen-sm-max){
+      font-size: @font-size-small;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+5.0 - Main Content
+--------------------------------------------------------------*/
+#mainContent {
+	background-color: @custom-color-base;
+	padding: 15px 40px 45px;
+  @media (max-width: @screen-sm-max) {
+    padding: 15px 27px 45px;
+  }
+  #section-1, #section-2, #section-3, #section-4{
+    color: @custom-color-orange;
+  }
+ h2 {
+    border-bottom: 1px dotted @gray-light;
+    margin-bottom: 20px;
+    .font-style(@custom-color-purple; @font-family-oswald; @font-size-h2; ceil((@font-size-h2 * 0.85))); /* ~26*/
+    letter-spacing: 2px;
+  }
+}
+
+#mainText {
+	padding-right: @padding-small-horizontal * 4; /*40px*/
+  @media (max-width: @screen-sm-max) {
+    padding-right: @padding-small-horizontal * 2; /*20px*/
+  }
+}
+
+#recentNews {
+  @media (max-width: @screen-sm-max) {
+   /*.padding-left-right(@padding-xs-horizontal); */
+   padding-right: @padding-xs-horizontal;
+  }
+}
+
+blockquote {
+  font-size: @font-size-base + 1;
+  border-left: 5px solid @gray-lighter;
+}
+
+#recentNews, .news{
+	h3{
+    .font-style(@custom-color-purple; @font-family-lato; @font-size-h3; floor((@font-size-h3 * 0.85)));
+	}
+	h5{
+		.font-style(@custom-color-orange; @font-family-lato; floor((@font-size-base * 1.15)); floor((@font-size-base * 1.15))); /*16px*/
+    @media (max-width: @screen-sm-max) {
+      font-size: @font-size-h6;
+    }
+	}
+}
+
+.newsImg{
+  .img-style();
+}
+
+.resImg{
+  padding-left:@padding-base-horizontal;
+  float: right;
+  @media (max-width: 508px){
+    float: left;
+    padding-left: 0;
+    padding-right: @padding-large-horizontal;
+  }
+}  
+
+.wp-caption-text{
+  font-style: italic;
+  font-size: 12px;
+  padding: 10px 0px;
+}
+
+.news,
+.people {
+  .nav-tabs{
+    .nav-tabs-style(@gray, @gray-lighter, @gray);
+  }
+  .tab-content{
+    .tab-content-style(@gray-dark, 10px, 8px);  
+  }
+}
+
+.resources {
+  .panel-group{
+    .panel-heading{
+      background-color: @gray;
+      color: @custom-color-base;
+    }
+    .panel-title{
+      .a-link (@custom-color-base);
+      @media (max-width: @screen-sm-max){
+        font-size: @font-size-base;
+      }
+    }
+    .panel-body {
+      ul {
+        margin-left: -20px;
+        @media (max-width: @screen-sm-max){
+          font-size: @font-size-small;
+        }
+      }
+    }
+  }
+}
+
+.people {
+  .thumbnail {
+    h4{
+      color: @custom-color-orange;
+      font-size: @font-size-base;
+      @media (max-width: @screen-xs-max){
+        font-size: ceil((@font-size-base * 0.95));
+      }
+    }
+    .title{
+      color: @gray-light;
+      @media (max-width: @screen-xs-max){
+        font-size: ceil((@font-size-base * 0.95));
+      }
+    }
+    p{
+      font-size: @font-size-small;
+      @media (max-width: @screen-xs-max){
+        font-size: floor((@font-size-small * 0.95)); 
+      }
+    }
+    > img {
+      .border(2px, @custom-border-color);
+    }
+    display: inline-block;
+    position: relative;
+    border: none !important;
+    padding: 0 0 95px 0;
+    @media (min-width: @screen-lg-min) {
+      margin-left: 12px;
+    }
+    .caption{
+      position: absolute;
+      width: 100%;
+      padding: 5px 0px !important;
+    }
+  }
+  .pInv{
+    padding: 0 0 150px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+6.0 - Footer
+--------------------------------------------------------------*/
+#pageFooter {
+  background: url(includes/img/footer-1050x105.png) no-repeat left bottom;
+  background-color: @custom-color-base;
+  .padding-top-bottom(@padding-xs-horizontal * 11; @padding-xs-horizontal * 3); /*55px and 15px*/
+  .padding-left-right(@padding-xs-horizontal * 5); /*25px*/
+  @media (max-width: @screen-sm-max) {
+    .padding-left-right(@padding-xs-horizontal * 3); /*15px*/
+    padding-bottom: 0;
+  }
+  .font-style(@custom-color-base; @font-family-open-sans; @font-size-base - 1; @font-size-base * .85);
+	.a-link (@custom-color-base);
+  .connect{
+    color: @custom-color-orange;
+  }
+  .socialIcon{
+    display: inline;
+    a:hover{
+      .opacity(.8);
+    }
+    @media(max-width: @screen-sm-max){
+      padding-top: @padding-large-vertical * 3; /*30px*/
+    }
+  }
+  .footer-left{
+    @media(max-width: @screen-sm-max){
+      padding-top: @padding-small-vertical * 5; /*25px*/
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+7.0 - Modal window
+--------------------------------------------------------------*/
+.modal-title {
+  .heading{
+    font-size: @font-size-h4;
+    font-family: @font-family-lato;
+  }
+  color: @custom-color-orange;
+} 
+
+.embed-responsive-16by9{
+  margin-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
+8.0 - Wordpress specific styles
+--------------------------------------------------------------*/
+//add space to wordpress menu bar
+.admin-bar .navbar-fixed-top {
+  margin-top: 30px;
+}
+
+.current-menu-item > a, .current-menu-parent > a {
+  background-color: #b14b2a;
+}
+
+.current-menu-item {
+  color: #333;
+}
+
+#menu-main-menu {
+  margin-bottom: 11px;
+}
+
+body {
+  word-wrap: break-word;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Images and wp-captions should always fit and be responsive */
+img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+img[class*="wp-image-"] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.wp-caption {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.wp-caption.aligncenter {
+  margin-bottom: 10px;
+}
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+}
+.wp-caption .wp-caption-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* WP Gallery */
+.gallery {
+  margin-bottom: 1.5em;
+}
+.gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%;
+}
+.gallery dd {
+  margin: 0;
+}
+.gallery-caption {
+  display: block;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/* Content */
+.main-content-inner {
+  padding-bottom: 1.5em;
+}
+.hentry {
+  margin: 0 0 1.5em;
+}
+.sticky {
+  display: block;
+}
+.bypostauthor {
+  display: block;
+}
+
+/* Clearing */
+.clear {
+  clear: both;
+}
+
+/* Navigation */
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:active>.dropdown-menu, .dropdown-submenu:hover>.dropdown-menu {
+display: block;
+}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:active>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+
+/* Here some needed widget styles
+ * Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
+.widget { 
+  margin-bottom: 2em; 
+}
+
+.widget_nav_menu ul.sub-menu li, 
+.widget_pages ul.children li { 
+  padding-left: 15px; 
+}
+
+/* Hiding the search widget's button in widgets. thats just too old-skool. :) but if you want it back, just delete the next line.
+ * Note: you can change the whole appearance of the search_form() function in our searchform.php */
+.widget_search .search-form input[type="submit"] { 
+display: none; 
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+  max-width: 100%;
+}
+
+/* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!
+ * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
+ .comment .children { margin-left: 1.5em; }
+
+/**
+* Some WP Theme Repository requirements
+*/
+
+.sticky {
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+
+}
+
+.entry-meta {
+  clear: both;
+}
+
+
