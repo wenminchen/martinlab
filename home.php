@@ -24,21 +24,19 @@ get_header(); ?>
       <div class="row" > 
         <div class="col-md-9 col-sm-8 news">
           <h2>Lab News</h2>
-
+          
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-   
-          <article class="post">
             
             <h5><a href="<?php the_permalink(); ?>"><?php the_title('',' | '); ?></a><?php echo the_time('F, Y');?></h5>
 
-      	    <p><?php the_content(); ?></p>        
+            <p><?php the_content(); ?></p> 
+            <p>&nbsp;</p>       
 
-	      <?php endwhile; endif; ?>
-          
-        </article>
-      </div>  
+          <?php endwhile; endif; ?>
+         
+        </div>
 
-<?php get_sidebar( 'resources' ); ?>
+    <?php get_sidebar( 'resources' ); ?>
 
 	</section>
       

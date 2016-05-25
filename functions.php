@@ -85,7 +85,7 @@ function martinlab_create_widget( $name, $id, $description ) {
 		'after_title'   => '</h2>',
 		) );
 }
-martinlab_create_widget( 'Home Sidebar', 'home-sidebar', 'Display on the side of homepage' );
+//martinlab_create_widget( 'Home Sidebar', 'home-sidebar', 'Display on the side of homepage' );
 martinlab_create_widget( 'Resources Sidebar', 'resources-sidebar', 'Displays on the side of page with sidebar' );
 martinlab_create_widget( 'Featured Right Focus', 'featured-right-focus', 'Displays on the right of featured section' );
 martinlab_create_widget( 'Featured Right Job', 'featured-right-job', 'Displays on the right of featured section' );
@@ -177,3 +177,4 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+

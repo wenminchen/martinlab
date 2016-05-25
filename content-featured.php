@@ -33,7 +33,7 @@
           <?php if ( dynamic_sidebar( 'featured-right-job' ) ); ?>
 
           <?php else : ?>
-          <?php if ( dynamic_sidebar( 'featured-left-focus' ) ); ?>
+          <?php if ( dynamic_sidebar( 'featured-right-focus' ) ); ?>
           <?php endif; ?>
           
        </div>    
