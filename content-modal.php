@@ -260,3 +260,45 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal --> 
+
+    <div class="modal fade" id="developmental_transition" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <p class="modal-title"><span class="heading">Developmental transition</span></p>
+          </div>
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rQwr2gpOwr4?rel=0" allowfullscreen></iframe>
+            </div>
+             <p><strong>Transition in pulsed contractions during wild-type ventral furrow formation</strong></p>
+             <p>Movie of myosin (green) and membrane (magenta) in embryo undergoing gastrulation. Pulsed contractions identified from the embryo are shown in white overlay. Bolded white pulses are ratcheted pulses. Lighter white pulses are unconstricting or unratcheted pulses. Cells start with unratcheted or unconstricting pulses and transition to having ratcheted pulses. Video / Shicong 'Mimi' Xie</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal --> 
+
+    <div class="modal fade" id="arrested_development" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <p class="modal-title"><span class="heading">Arrested development</span></p>
+          </div>
+          <div class="modal-body">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JeNJwu3HRks?rel=0" allowfullscreen></iframe>
+            </div>
+             <p><strong>Twist is required for proper order of different contractile pulse</strong></p>
+             <p>Movie of myosin (green) and membrane (magenta) in embryo injected with twi double stranded RNA. Pulsed contractions identified from the embryo are shown in white overlay. Bolded pulses are ratcheted pulses. Lighter white pulses are unconstricting or unratcheted pulses. Note that cells abnormally switch from having a ratcheted pulse back to having unratcheted pulses. Video / Shicong 'Mimi' Xie</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
