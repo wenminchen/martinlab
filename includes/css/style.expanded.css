@@ -6767,6 +6767,14 @@ hr {
     font-size: 12px;
   }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #cc5630;
+}
 @media (max-width: 991px) {
   h5 {
     font-size: 12px;
@@ -6978,6 +6986,7 @@ span.tagline {
   border: 2px solid #dfdccd;
   margin-right: 10px;
   float: left;
+  margin-top: 0;
 }
 #featuredRight {
   padding: 10px 50px 10px 30px;
@@ -6998,13 +7007,13 @@ span.tagline {
     padding-top: 45px;
   }
 }
-#featuredRight .labOpening .pheading {
+.pheading {
   color: #cc5630;
-  font-family: 'Shadows Into Light Two', cursive;
+  font-family: 'Shadows Into Light', cursive;
   font-size: 24px;
 }
 @media (max-width: 991px) {
-  #featuredRight .labOpening .pheading {
+  .pheading {
     font-size: 20px;
   }
 }
@@ -7030,6 +7039,9 @@ span.tagline {
   .carousel-inner p {
     font-size: 12px;
   }
+}
+.carousel-caption h4 {
+  color: #fff;
 }
 /*--------------------------------------------------------------
 5.0 - Main Content
@@ -7246,7 +7258,7 @@ blockquote {
     font-size: 11px;
   }
 }
-.people .thumbnail > img {
+.people .thumbnail img {
   border: 2px solid #dfdccd;
 }
 @media (min-width: 1200px) {
@@ -7350,6 +7362,45 @@ blockquote {
 #menu-main-menu {
   margin-bottom: 11px;
 }
+/* paging nav */
+.paging-navigation ul {
+  margin-top: 3em;
+}
+.paging-navigation li {
+  display: inline;
+}
+a.page-numbers,
+span.page-numbers {
+  padding: .3em .7em;
+  border: 1px solid #cc5630;
+}
+.paging-navigation .current {
+  font-weight: bold;
+}
+/* widget styles */
+.widget h3 {
+  color: #cc5630;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 24px;
+}
+@media (max-width: 991px) {
+  .widget h3 {
+    font-size: 20px;
+  }
+}
+#black-studio-tinymce-3 li {
+  margin-left: -20px;
+}
+@media (max-width: 991px) {
+  #black-studio-tinymce-3 li {
+    font-size: 12px;
+  }
+}
+img.attachment-post-thumbnail,
+.news img {
+  border: 2px solid #dfdccd;
+  padding-bottom: 1px;
+}
 body {
   word-wrap: break-word;
 }
@@ -7382,8 +7433,6 @@ img[class*="wp-image-"] {
 .wp-caption {
   margin-bottom: 10px;
   max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   padding: 0 10px;
 }
 .wp-caption.aligncenter {
@@ -7461,71 +7510,5 @@ object {
 }
 /* Clearing */
 .clear {
-  clear: both;
-}
-/* Navigation */
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:active > .dropdown-menu,
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block;
-}
-.dropdown-submenu > a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:active > a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left > .dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-/* Here some needed widget styles
- * Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
-.widget {
-  margin-bottom: 2em;
-}
-.widget_nav_menu ul.sub-menu li,
-.widget_pages ul.children li {
-  padding-left: 15px;
-}
-/* Hiding the search widget's button in widgets. thats just too old-skool. :) but if you want it back, just delete the next line.
- * Note: you can change the whole appearance of the search_form() function in our searchform.php */
-.widget_search .search-form input[type="submit"] {
-  display: none;
-}
-/* Make sure select elements fit in widgets */
-.widget select {
-  max-width: 100%;
-}
-/* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!
- * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
-.comment .children {
-  margin-left: 1.5em;
-}
-/**
-* Some WP Theme Repository requirements
-*/
-.entry-meta {
   clear: both;
 }

@@ -13,6 +13,21 @@
 
 get_header(); ?>
 
+<!-- image carousel -->
+    <section id="featuredArea">
+      <h2 class="screen-reader-text">Featured Area</h2>
+      <h3 class="screen-reader-text">Image Carousel</h3>
+
+      <?php 
+        get_template_part('content', 'carousel'); 
+        get_template_part('content', 'featured'); 
+      ?>
+
+    </section><!-- end featuredArea -->  
+
+<!-- main content -->
+    <section id="mainContent"> 
+
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
@@ -28,7 +43,6 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php martinlab_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 
@@ -36,5 +50,4 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

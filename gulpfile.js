@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 	less = require('gulp-less'),
-    autoprefixer = require('gulp-autoprefixer')
-    minifyCSS  = require('gulp-minify-css'), 
+  autoprefixer = require('gulp-autoprefixer')
+  minifyCSS  = require('gulp-minify-css'), 
 	rename = require('gulp-rename'); 
 
 /* Task to compile less */
@@ -13,11 +13,6 @@ gulp.task('styles',function(){
     .pipe(gulp.dest('./includes/css/'));
 });
 
-/* Task to watch less changes */
-gulp.task('watch', function () {
-  gulp.watch('./includes/less/**/*.less', ['styles']);
-});
-
 /* Task to minify css */
 gulp.task('minify-css', function() {  
   gulp.src('./includes/css/style.expanded.css')
@@ -26,5 +21,10 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./'));
 });
 
+/* Task to watch less changes */
+gulp.task('watch', function () {
+  gulp.watch('./includes/less/**/*.less', ['styles', 'minify-css']);
+});
+
 /* Task when running `gulp` from terminal */
-gulp.task('default', ['styles', 'watch', 'minify-css']);
+gulp.task('default', ['styles', 'minify-css', 'watch']);

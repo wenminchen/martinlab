@@ -23,9 +23,9 @@
    
           <article class="post">
             
-            <h5><a href="<?php the_permalink(); ?>"><?php the_title('',' | '); ?></a><?php echo the_time('F, Y');?></h5>
+            <h5><?php the_title('',' | '); ?><?php echo the_time('F, Y');?></h5>
 
-      	    <p><span class="alignleft"><?php the_post_thumbnail();?></span>
+      	    <p><span class="alignleft"><a href="<?php bloginfo( 'url' ); ?>/news"><?php the_post_thumbnail();?></a></span>
       	    <?php the_excerpt(); ?></p>
 			<hr>
 

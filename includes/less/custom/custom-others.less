@@ -123,10 +123,14 @@ hr{
   .border(1px; @gray-lighter);
 }
 
-p, .highlight {
+p, .highlight{
   @media (max-width: @screen-sm-max) {
     font-size: @font-size-small;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: @custom-color-orange;
 }
 
 h5 {
@@ -269,6 +273,7 @@ span.tagline{
     }
     img{
       .img-style;
+      margin-top: 0;
     }
   }
 }  
@@ -288,11 +293,12 @@ span.tagline{
 		@media (min-width: @screen-sm-max) {
 			padding-top: @padding-small-vertical * 9;
 		}
-		.pheading{
-      .font-style(@custom-color-orange; @font-family-shadows; @font-size-h3; floor((@font-size-h3 * 0.85)));
-		}
-	}	
+	}
 }
+
+.pheading{
+    .font-style(@custom-color-orange; @font-family-shadows; @font-size-h3; floor((@font-size-h3 * 0.85)));
+  } 
 
 /* image carousel */
 .carousel-control .control-prev,
@@ -321,6 +327,9 @@ span.tagline{
       font-size: @font-size-small;
     }
   }
+}
+.carousel-caption h4 {
+  color: @custom-color-base;
 }
 
 /*--------------------------------------------------------------
@@ -448,7 +457,7 @@ blockquote {
         font-size: floor((@font-size-small * 0.95)); 
       }
     }
-    > img {
+    img {
       .border(2px, @custom-border-color);
     }
     display: inline-block;
@@ -537,6 +546,45 @@ blockquote {
   margin-bottom: 11px;
 }
 
+/* paging nav */
+.paging-navigation ul {
+    margin-top: 3em;
+}
+
+.paging-navigation li { 
+  display: inline; 
+}
+
+a.page-numbers,
+span.page-numbers {
+  padding: .3em .7em;
+  border: 1px solid @custom-color-orange;
+}
+
+.paging-navigation .current {
+    font-weight: bold;
+}
+
+
+/* widget styles */
+.widget {
+  h3 {
+  .font-style(@custom-color-orange; @font-family-shadows; @font-size-h3; floor((@font-size-h3 * 0.85)));
+  }
+}
+#black-studio-tinymce-3 li {
+  margin-left: -20px;
+  @media (max-width: @screen-sm-max) {
+    font-size: @font-size-small;
+  }
+}
+
+img.attachment-post-thumbnail,
+.news img{
+    border: 2px solid #dfdccd;
+    padding-bottom: 1px;
+}
+
 body {
   word-wrap: break-word;
 }
@@ -571,11 +619,8 @@ img[class*="wp-image-"] {
   margin-bottom: 10px;
 }
 .wp-caption {
-  border: 1px solid #ccc;
   margin-bottom: 10px;
   max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   padding: 0 10px;
 }
 .wp-caption.aligncenter {
@@ -659,61 +704,3 @@ object {
 .clear {
   clear: both;
 }
-
-/* Navigation */
-.dropdown-submenu{position:relative;}
-.dropdown-submenu>.dropdown-menu{top:0;left:100%;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
-.dropdown-submenu:active>.dropdown-menu, .dropdown-submenu:hover>.dropdown-menu {
-display: block;
-}
-.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
-.dropdown-submenu:active>a:after{border-left-color:#ffffff;}
-.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
-
-
-/* Here some needed widget styles
- * Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
-.widget { 
-  margin-bottom: 2em; 
-}
-
-.widget_nav_menu ul.sub-menu li, 
-.widget_pages ul.children li { 
-  padding-left: 15px; 
-}
-
-/* Hiding the search widget's button in widgets. thats just too old-skool. :) but if you want it back, just delete the next line.
- * Note: you can change the whole appearance of the search_form() function in our searchform.php */
-.widget_search .search-form input[type="submit"] { 
-display: none; 
-}
-
-/* Make sure select elements fit in widgets */
-.widget select {
-  max-width: 100%;
-}
-
-/* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!
- * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
- .comment .children { margin-left: 1.5em; }
-
-/**
-* Some WP Theme Repository requirements
-*/
-
-.sticky {
-}
-
-.gallery-caption {
-
-}
-
-.bypostauthor {
-
-}
-
-.entry-meta {
-  clear: both;
-}
-
-

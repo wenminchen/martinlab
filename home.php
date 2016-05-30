@@ -27,12 +27,14 @@ get_header(); ?>
           
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             
-            <h5><a href="<?php the_permalink(); ?>"><?php the_title('',' | '); ?></a><?php echo the_time('F, Y');?></h5>
+            <h5><?php the_title('',' | '); ?><?php echo the_time('F, Y');?></h5>
 
             <p><?php the_content(); ?></p> 
             <p>&nbsp;</p>       
 
-          <?php endwhile; endif; ?>
+          <?php endwhile; ?>
+
+          <?php martinlab_paging_nav(); endif; ?>
          
         </div>
 

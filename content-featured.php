@@ -31,10 +31,22 @@
         <div id="featuredRight" class="col-md-6 col-sm-12">
 
           <?php if (is_page( 'People' ) ) : ?>
-          <?php if ( dynamic_sidebar( 'featured-right-job' ) ); ?>
+          <h3 class="screen-reader-text">Open Positions</h3>
+          <div class="pull-right bioLogo hidden-sm hidden-xs">
+              <a href="https://biology.mit.edu/" target="_blank"><img src="<?php bloginfo('template_directory');?>/includes/img/biology_logo_141x35.png" alt="Biology Department logo" class="mit-bio-logo" /></a>
+          </div>
+          <div style="clear: both;"></div>
+          <p><span class="pheading">Interested in Joining the Lab?</span></p>
+          <p><?php if ( dynamic_sidebar( 'featured-right-job' ) ); ?></p>
 
           <?php else : ?>
-          <?php if ( dynamic_sidebar( 'featured-right-focus' ) ); ?>
+          <h3 class="screen-reader-text">Research in Focus</h3>
+          <div class="pull-right bioLogo hidden-sm hidden-xs">
+              <a href="https://biology.mit.edu/" target="_blank"><img src="<?php bloginfo('template_directory');?>/includes/img/biology_logo_141x35.png" alt="Biology Department logo" class="mit-bio-logo" /></a>
+          </div>
+          <div style="clear: both;"></div>
+          <p><span class="pheading">Research in Focus</span></p>
+          <p><?php if ( dynamic_sidebar( 'featured-right-focus' ) ); ?></p>
           <?php endif; ?>
           
        </div>    
