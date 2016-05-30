@@ -7,19 +7,21 @@
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+<section id="mainContent"> 
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part( 'content', 'single' ); ?>
+		<article class="post">
+            
+            <h4><?php the_title('',' | '); ?><?php echo the_time('F, Y');?></h4>
 
-		<?php _tk_content_nav( 'nav-below' ); ?>
+      	    <p><?php the_content(); ?></p>        
 
-		<?php
-			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || '0' != get_comments_number() )
-				comments_template();
-		?>
+	      <?php endwhile; ?>
+          
+        </article>
 
-	<?php endwhile; // end of the loop. ?>
+	<?php endif; // end of the loop. ?>
 
-<?php get_sidebar(); ?>
+</section>
+
 <?php get_footer(); ?>

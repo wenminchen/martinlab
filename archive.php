@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<section id="mainContent"> 
 	<?php // add the class "panel" below here to wrap the content-padder in Bootstrap style ;) ?>
 	<div class="content-padder">
 
@@ -96,6 +97,6 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</div><!-- .content-padder -->
+</section>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -7,10 +7,11 @@
 
 get_header(); ?>
 
+<section id="mainContent"> 
 	<?php if ( have_posts() ) : ?>
 
 		<header>
-			<h2 class="page-title"><?php printf( __( 'Search Results for: %s', '_tk' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+			<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'martinlab' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 		</header><!-- .page-header -->
 
 		<?php // start the loop. ?>
@@ -20,13 +21,13 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php _tk_content_nav( 'nav-below' ); ?>
+		<?php martinlab_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 
 		<?php get_template_part( 'no-results', 'search' ); ?>
 
 	<?php endif; // end of loop. ?>
+</section>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
