@@ -10,7 +10,7 @@
 
 <section id="mainContent" class="no-results not-found">
 	<header>
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'martinlab' ); ?></h1>
+		<h2 class="page-title"><?php _e( 'Nothing Found', 'martinlab' ); ?></h2>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
