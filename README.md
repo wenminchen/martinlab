@@ -6,18 +6,18 @@ MartinLab is a theme based on the website for [Martin Lab at MIT](http://web.mit
 ### Responsive Design
 MartinLab is built using the bootstrap framework and is therefore responsive. 
 
-### Customizer Options (to be updated)
-Extended options available from the Customizer:
-
-1. Site Icon displays as logo in top-right corner
-2. Header background color
-3. Header text color
-
 ### Featured Images
 Posts and pages can have Featured Images.
 
 ### Widgetized Areas (to be updated)
-1. Sidebar
+1. Resources Sidebar - sidebar on the resources page
+2. Featured Right Focus - Research In Focus (displayed on the right of featured section)
+3. Featured Right Job - Job Posting (displayed on the right of the featured section)
+4. Featured Left Front - Videos on homepage (displayed on the left of the featured section)
+5. Featured Left Research - Videos on research page (displayed on the left of the featured section)
+6. Featured Left People - Videos on people page (displayed on the left of the featured section)
+7. Featured Left Publication - Videos on publication page (displayed on the left of the featured section)
+8. Featured Left News - Videos on news page (displayed on the left of the featured section)
 
 ### Custom Widgets (to be updated)
 - Recent Posts widget featuring post title, publishing date, and thumbnail
