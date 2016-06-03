@@ -14,7 +14,7 @@ gulp.task('styles',function(){
 });
 
 /* Task to minify css */
-gulp.task('minify-css', function() {  
+gulp.task('minify-css', ['styles'], function() {  
   gulp.src('./includes/css/style.expanded.css')
     .pipe(minifyCSS())
     .pipe(rename('style.css'))
@@ -23,7 +23,8 @@ gulp.task('minify-css', function() {
 
 /* Task to watch less changes */
 gulp.task('watch', function () {
-  gulp.watch('./includes/less/**/*.less', ['styles', 'minify-css']);
+  gulp.watch('./includes/less/**/*.less', ['styles']);
+  gulp.watch('./includes/less/**/*.less', ['minify-css']);
 });
 
 /* Task when running `gulp` from terminal */
